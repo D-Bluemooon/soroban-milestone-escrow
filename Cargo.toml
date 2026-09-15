@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "A minimal milestone-based escrow contract for Soroban"
-repository = "https://github.com/YOUR_ORG/soroban-milestone-escrow"
+repository = "https://github.com/D-Bluemooon/soroban-milestone-escrow"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
