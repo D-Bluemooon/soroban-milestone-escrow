@@ -26,7 +26,7 @@ fn happy_path_approve_and_release() {
     env.mock_all_auths();
     let (client_addr, provider, arbiter, token_address, token_client) = setup(&env);
 
-    let contract_id = env.register(MilestoneEscrowContract, ());
+    let contract_id = env.register_contract(None, MilestoneEscrowContract);
     let escrow_client = MilestoneEscrowContractClient::new(&env, &contract_id);
 
     let milestones = vec![
@@ -60,7 +60,7 @@ fn dispute_resolved_in_favor_of_provider() {
     env.mock_all_auths();
     let (client_addr, provider, arbiter, token_address, token_client) = setup(&env);
 
-    let contract_id = env.register(MilestoneEscrowContract, ());
+    let contract_id = env.register_contract(None, MilestoneEscrowContract);
     let escrow_client = MilestoneEscrowContractClient::new(&env, &contract_id);
 
     let milestones = vec![
@@ -87,7 +87,7 @@ fn cannot_approve_twice() {
     env.mock_all_auths();
     let (client_addr, provider, arbiter, token_address, _token_client) = setup(&env);
 
-    let contract_id = env.register(MilestoneEscrowContract, ());
+    let contract_id = env.register_contract(None, MilestoneEscrowContract);
     let escrow_client = MilestoneEscrowContractClient::new(&env, &contract_id);
 
     let milestones = vec![
